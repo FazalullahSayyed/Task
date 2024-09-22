@@ -1,0 +1,20 @@
+<mat-toolbar color="primary" *ngIf="authService.isLoggedIn()">
+    <button routerLink="/home"><span>Get The Marvel</span></button>
+    <span class="example-spacer"></span>
+    <a routerLink="/dashboard">
+      <button mat-raised-button color="primary"><mat-icon>dashboard</mat-icon>Dashboard</button>
+    </a>&nbsp;
+    <a routerLink="/employee">
+      <button mat-raised-button color="primary"><mat-icon>supervisor_account</mat-icon>User</button>
+    </a>&nbsp;
+    <a routerLink="/reports">
+      <button mat-raised-button color="primary"><mat-icon>assessment</mat-icon>Reports</button>
+    </a>&nbsp;
+    <a>
+      <button mat-raised-button color="primary"><mat-icon>account_circle</mat-icon>Profile</button>
+    </a>
+</mat-toolbar>
+
+<h1 *ngIf="!authService.isLoggedIn()"></h1>
+
+<router-outlet></router-outlet>
